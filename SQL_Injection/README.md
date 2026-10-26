@@ -1,6 +1,6 @@
 # SQL Injection — Demo & Defense
 
-**Member:** 23abdul23
+**Member:** Abdul
 **Category:** SQL Injection
 **Variants implemented:** both Table-1 variants, in the same app — Variant 1 (Authentication bypass) and Variant 2 (UNION-based data extraction)
 
@@ -142,7 +142,3 @@ Besides parameterized queries, the lecture slides cover:
 Parameterized queries remain the primary fix because they address the root cause — the input is structurally incapable of being parsed as SQL — while the others reduce exposure or impact without closing the hole on their own.
 
 ---
-
-## Ownership
-
-This folder and its contents are implemented by **23abdul23** for the SQL Injection category of the group assignment, covering both Table 1 variants (Authentication bypass and UNION-based data extraction) as permitted for an individual member who has no teammate assigned to the other variant.
