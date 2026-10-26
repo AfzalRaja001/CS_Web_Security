@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PROTECTED - SQL Injection Demo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>✅ PROTECTED SQL Injection Demo</h1>
+  <p class="ok">Same routes as the vulnerable app, now using parameterized queries.</p>
+
+  <section>
+    <h2>Variant 1 — Login (bypass attempt now fails)</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="username" value="admin">
+      <input type="text" id="password" placeholder="password" value="wrongpassword">
+      <button type="submit">Login</button>
+    </form>
+    <p>Try the same payload: <code>admin' --</code> or <code>' OR '1'='1' --</code> → now treated as a literal username and rejected.</p>
+    <pre id="loginResult"></pre>
+  </section>
+
+  <section>
+    <h2>Variant 2 — Product Search (UNION attempt now fails)</h2>
+    <form id="searchForm">
+      <input type="text" id="q" placeholder="search products..." value="USB">
+      <button type="submit">Search</button>
+    </form>
+    <p>Try the same payload: <code>' UNION SELECT username, password, 0 FROM users--</code> → returns zero rows, not leaked user data.</p>
+    <pre id="searchResult"></pre>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
