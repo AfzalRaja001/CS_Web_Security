@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ping — Vulnerable</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 680px; margin: 40px auto; padding: 0 16px; }
+    h1 { font-size: 1.25rem; }
+    input, button { font-size: 1rem; padding: 6px 8px; }
+    input { width: 340px; }
+    pre { background: #f4f4f4; color: #000; border: 1px solid #ccc; padding: 12px;
+          white-space: pre-wrap; word-break: break-all; min-height: 60px; }
+    label { display: inline-block; width: 50px; }
+    .row { margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <h1>Network Diagnostic Tool — Vulnerable</h1>
+  <p><a href="/">&larr; back</a> &nbsp; Enter a host to ping.</p>
+
+  <div class="row">
+    <label>Host</label>
+    <input id="host" value="127.0.0.1" autocomplete="off">
+    <button onclick="run()">Ping</button>
+  </div>
+  <pre id="out">output appears here</pre>
+
+  <script>
+    async function run() {
+      const out = document.getElementById("out");
+      out.textContent = "running...";
+      const t0 = performance.now();
+      try {
+        const r = await fetch("/api/vuln", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: "host=" + encodeURIComponent(document.getElementById("host").value)
+        });
+        const text = await r.text();
+        out.textContent = text + "\n\n[response time: " + Math.round(performance.now() - t0) + " ms]";
+      } catch (e) { out.textContent = "error: " + e.message; }
+    }
+  </script>
+</body>
+</html>

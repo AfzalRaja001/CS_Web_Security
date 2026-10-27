@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Network Diagnostic Tool</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 680px; margin: 40px auto; padding: 0 16px; }
+    h1 { font-size: 1.25rem; }
+    a { font-size: 1.05rem; }
+    p { margin: 14px 0; }
+    code { background:#eee; padding:1px 4px; }
+  </style>
+</head>
+<body>
+  <h1>Network Diagnostic Tool</h1>
+  <p>IT-30001 — OS Command Injection (in-band).</p>
+  <p><a href="/vulnerable">Vulnerable version</a> — uses <code>exec</code>, try the payloads here.</p>
+  <p><a href="/fixed">Fixed version</a> — allow-list + <code>execFile</code> (and a weak blacklist route to bypass).</p>
+</body>
+</html>

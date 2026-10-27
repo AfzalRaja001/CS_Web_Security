@@ -1,0 +1,12 @@
+{
+  "name": "cmd-injection-assignment",
+  "version": "1.0.0",
+  "description": "IT-30001 Cyber Security — OS Command Injection (In-band): one server, two pages (vulnerable + fixed)",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
