@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff2bd">
+    <title>Prize Desk | CSRF Lab</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="page-shell">
+      <article class="prize-card" aria-labelledby="page-title">
+        <div class="confetti" aria-hidden="true">🎉</div>
+        <p class="eyebrow">The daily prize desk</p>
+        <h1 id="page-title">Congratulations!</h1>
+        <p class="lead">You've been selected as today's lucky winner.</p>
+        <div class="prize-mark" aria-hidden="true"><span>$</span>500</div>
+        <p class="prize-copy">A fictional gift card is ready to claim. Your prize is waiting.</p>
+
+        <label class="target-label" for="target-mode">Send request to</label>
+        <select id="target-mode" name="target-mode">
+          <option value="vulnerable">Vulnerable victim (4310)</option>
+          <option value="protected">Protected victim (4312)</option>
+        </select>
+        <button id="claim-prize" type="button">Claim My Prize</button>
+
+        <p class="simulation-note">This page simulates a GET-based CSRF attack against a local demo account.</p>
+        <p class="disclaimer">Simulated security demonstration for educational purposes only.</p>
+      </article>
+      <p class="page-caption">A controlled demonstration. The button navigates to the local victim app.</p>
+    </main>
+    <script src="config.js"></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile | CSRF Lab</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="header">
+        <h1>Account</h1>
+        <span id="mode-label"></span>
+      </header>
+
+      <p id="status" role="status" aria-live="polite"></p>
+
+      <section id="auth-panel" class="panel" hidden>
+        <nav class="auth-tabs" aria-label="Account access">
+          <button id="show-login" class="tab active" type="button">Log in</button>
+          <button id="show-register" class="tab" type="button">Register</button>
+        </nav>
+        <form id="login-form">
+          <label for="login-identity">Username or email</label>
+          <input id="login-identity" name="usernameOrEmail" autocomplete="username" value="guest" required>
+          <label for="login-password">Password</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" value="123456" maxlength="6" required>
+          <button class="primary" type="submit">Log in</button>
+        </form>
+        <form id="register-form" hidden>
+          <label for="register-username">Username</label>
+          <input id="register-username" name="username" autocomplete="username" minlength="3" maxlength="32" required>
+          <label for="register-email">Email</label>
+          <input id="register-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+          <label for="register-password">Password</label>
+          <input id="register-password" name="password" type="password" autocomplete="new-password" minlength="1" maxlength="6" required>
+          <button class="primary" type="submit">Create account</button>
+        </form>
+      </section>
+
+      <section id="profile-panel" class="panel" hidden>
+        <dl class="profile-fields">
+          <div><dt>Username</dt><dd id="profile-username"></dd></div>
+          <div><dt>Email</dt><dd id="profile-email"></dd></div>
+          <div><dt>Password</dt><dd aria-label="Password hidden">********</dd></div>
+        </dl>
+        <button id="logout-button" class="secondary" type="button">Log out</button>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Victim Profile | CSRF Lab</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="page-header">
+        <p class="eyebrow">Local security lab</p>
+        <h1>Profile settings</h1>
+        <span class="mode-badge">Vulnerable GET demo</span>
+      </header>
+
+      <section id="status" class="status" role="status" aria-live="polite"></section>
+
+      <section id="login-panel" class="panel" hidden>
+        <h2>Sign in to the demo account</h2>
+        <p>Use the synthetic credentials listed in the CSRF README.</p>
+        <form id="login-form">
+          <label for="username">Username</label>
+          <input id="username" name="username" autocomplete="username" required>
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required>
+          <button type="submit">Log in</button>
+        </form>
+      </section>
+
+      <section id="profile-panel" class="panel" hidden>
+        <div class="profile-heading">
+          <div>
+            <h2>Signed-in profile</h2>
+            <p class="muted">Synthetic user: student</p>
+          </div>
+          <button id="logout-button" class="button-secondary" type="button">Log out</button>
+        </div>
+        <dl class="profile-data">
+          <dt>Current email</dt>
+          <dd id="email-value"></dd>
+        </dl>
+        <form id="email-form">
+          <label for="new-email">Change email</label>
+          <input id="new-email" name="email" type="email" autocomplete="email" required>
+          <button type="submit">Update email (GET)</button>
+          <p class="form-note">This vulnerable demo changes account state with a GET request and has no CSRF intent check.</p>
+        </form>
+      </section>
+
+      <footer>Local-only coursework demonstration. Do not deploy.</footer>
+    </main>
+  </body>
+</html>
