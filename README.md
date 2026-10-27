@@ -17,12 +17,10 @@ plus the theory of the other mitigation options.
 
 | Member name | Roll number | Category | Variant implemented |
 |---|---|---|---|
-| Abdul | `<roll>` | SQL Injection | Authentication bypass + UNION-based data extraction (both) |
+| Abdul | IIT2024243 | SQL Injection | Authentication bypass + UNION-based data extraction (both) |
 | Kavyan Hembrom | IIT2024245 | OS Command Injection | In-band (command output returned) |
-| Mohammed Afzal Raja | `<roll>` | Cross-Site Scripting (XSS) | Stored XSS |
-| Khushi Shorey | `<roll>` | CSRF | GET-based forged action |
-
-_(Group members: please fill in your roll numbers.)_
+| Mohammed Afzal Raja | IIB2024031 | Cross-Site Scripting (XSS) | Stored XSS |
+| Khushi Shorey | IIT2024244 | CSRF | GET-based forged action |
 
 ## Modules
 

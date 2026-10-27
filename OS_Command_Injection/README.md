@@ -13,9 +13,9 @@ a **Vulnerable** page and a **Fixed** page. For authorised testing on our own ap
 | Member name | Roll number | Category | Variant implemented |
 |---|---|---|---|
 | Kavyan Hembrom | IIT2024245 | OS Command Injection | In-band (command output returned) |
-| Abdul | `<roll>` | SQL Injection | Authentication bypass + UNION-based |
-| Mohammed Afzal Raja | `<roll>` | Cross-Site Scripting (XSS) | Stored XSS |
-| Khushi Shorey | `<roll>` | CSRF | GET-based forged action |
+| Abdul | IIT2024243 | SQL Injection | Authentication bypass + UNION-based |
+| Mohammed Afzal Raja | IIB2024031 | Cross-Site Scripting (XSS) | Stored XSS |
+| Khushi Shorey | IIT2024244 | CSRF | GET-based forged action |
 
 > This file documents only the **OS Command Injection — In-band** variant (Kavyan's part).
 
