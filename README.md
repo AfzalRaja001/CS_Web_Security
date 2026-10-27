@@ -1,8 +1,0 @@
-﻿# CS_Web_Security
-
-| Member name | Roll number | Category | Variant implemented |
-|---|---|---|---|
-| Abdul | IIT2024243 | SQL Injection | Authentication bypass & UNION-based data extraction ([SQL_Injection/](SQL_Injection/)) |
-| _TODO_ | _TODO_ | OS Command Injection | _TODO_ |
-| Afzal | IIB2024031 | Cross-Site Scripting (XSS) | Stored XSS ([XSS_Vulnerability/](XSS_Vulnerability/))|
-| _TODO_ | _TODO_ | Cross-Site Request Forgery (CSRF) | _TODO_ |

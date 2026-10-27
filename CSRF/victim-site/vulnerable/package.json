@@ -1,0 +1,15 @@
+{
+  "name": "csrf-victim-vulnerable-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local-only GET-based CSRF demonstration victim app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

@@ -1,0 +1,181 @@
+:root {
+  color-scheme: light;
+  --ink: #392b16;
+  --muted: #786b55;
+  --honey: #e0a629;
+  --honey-deep: #a86c08;
+  --paper: #fffdf7;
+  --line: #eee3c9;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background-color: #fff2bd;
+  background-image: radial-gradient(#e7cd7f 0.8px, transparent 0.8px);
+  background-size: 24px 24px;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+.page-shell {
+  display: grid;
+  min-height: 100vh;
+  align-content: center;
+  justify-items: center;
+  gap: 18px;
+  padding: 32px 18px;
+}
+
+.prize-card {
+  position: relative;
+  width: min(100%, 470px);
+  padding: 38px 38px 30px;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 85%);
+  border-radius: 14px;
+  background: var(--paper);
+  box-shadow: 0 22px 55px rgb(91 65 14 / 16%), 0 3px 9px rgb(91 65 14 / 8%);
+  text-align: center;
+  animation: arrive 450ms ease-out both;
+}
+
+.prize-card::before,
+.prize-card::after {
+  position: absolute;
+  z-index: 0;
+  width: 70px;
+  height: 5px;
+  border-radius: 4px;
+  background: #edc04c;
+  content: "";
+  transform: rotate(-38deg);
+}
+
+.prize-card::before { top: 29px; left: -24px; }
+.prize-card::after { top: 68px; right: -25px; background: #ed8c56; transform: rotate(38deg); }
+.prize-card > * { position: relative; z-index: 1; }
+
+.confetti {
+  display: grid;
+  width: 74px;
+  height: 74px;
+  margin: 0 auto 17px;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff1c2;
+  font-size: 39px;
+  line-height: 1;
+}
+
+.eyebrow {
+  margin: 0 0 9px;
+  color: var(--honey-deep);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 38px;
+  line-height: 1.12;
+}
+
+.lead {
+  max-width: 330px;
+  margin: 14px auto 20px;
+  color: #5f513b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.prize-mark {
+  display: flex;
+  width: 150px;
+  height: 88px;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  margin: 0 auto;
+  border: 2px solid #e4bd58;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #fff3c9, #ffe6a0);
+  color: #79500b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 38px;
+  font-weight: 700;
+  box-shadow: inset 0 0 0 4px rgb(255 255 255 / 55%);
+}
+
+.prize-mark span { align-self: flex-start; padding-top: 17px; font-size: 18px; }
+.prize-copy { margin: 15px auto 22px; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.target-label { display: block; margin: 0 0 7px; color: var(--muted); font-size: 12px; text-align: left; }
+select {
+  width: 100%;
+  min-height: 43px;
+  margin-bottom: 12px;
+  padding: 8px 10px;
+  border: 1px solid #d6c9a7;
+  border-radius: 5px;
+  background: #fff;
+  color: var(--ink);
+  font: 14px/1.3 "Trebuchet MS", "Segoe UI", sans-serif;
+}
+select:focus-visible { outline: 3px solid #4b6d37; outline-offset: 3px; }
+
+button {
+  width: 100%;
+  min-height: 52px;
+  border: 0;
+  border-radius: 6px;
+  background: #b87512;
+  box-shadow: 0 4px 0 #8a570c;
+  color: #fff;
+  cursor: pointer;
+  font: 800 16px/1.3 "Trebuchet MS", "Segoe UI", sans-serif;
+  transition: background-color 140ms ease, transform 140ms ease, box-shadow 140ms ease;
+}
+
+button:hover { background: #9e610b; transform: translateY(-1px); box-shadow: 0 5px 0 #754808; }
+button:active { transform: translateY(2px); box-shadow: 0 2px 0 #754808; }
+button:focus-visible { outline: 3px solid #4b6d37; outline-offset: 4px; }
+
+.simulation-note {
+  margin: 17px 0 0;
+  color: #705318;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.disclaimer {
+  margin: 17px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.page-caption { margin: 0; color: #66552f; font-size: 12px; text-align: center; }
+
+@keyframes arrive {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .prize-card { padding: 32px 22px 25px; }
+  h1 { font-size: 33px; }
+  .lead { font-size: 17px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

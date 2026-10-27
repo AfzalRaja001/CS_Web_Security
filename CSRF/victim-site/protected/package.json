@@ -1,0 +1,15 @@
+{
+  "name": "csrf-victim-protected-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local CSRF-mitigated victim app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test ../vulnerable/test/*.test.js"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
